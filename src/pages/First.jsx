@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { BGimage } from "../assets";
 import { useState } from "react";
 
@@ -27,8 +26,11 @@ const First = () => {
           Are you free on 14<sup>th</sup> February??
         </p>
         <div className=" w-full flex flex-row justify-evenly">
-          <button className=" border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white">
-            <Link to="/second-page">Yesss</Link>
+          <button
+            className=" border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white"
+            onlcick={handleClick}
+          >
+            yessss
           </button>
           <button
             onClick={handleClick}
