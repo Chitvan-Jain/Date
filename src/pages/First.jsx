@@ -30,7 +30,7 @@ const First = () => {
             className=" border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white"
             onlcick={handleClick}
           >
-            yessss
+            yup
           </button>
           <button
             onClick={handleClick}
