@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BGimage } from "../assets";
-import { useState } from "react";
 
 const Second = () => {
-  const [clicked, setClicked] = useState(false);
   const [position, setPosition] = useState({});
+  const [hoveredOnce, setHoveredOnce] = useState(false);
 
-  const handleClick = () => {
-    setClicked(true);
+  const handleMouseMove = () => {
     const buttonWidth = 100; // Width of the button
     const buttonHeight = 40; // Height of the button
-    const maxLeft = document.documentElement.clientWidth - buttonWidth;
-    const maxTop = document.documentElement.clientHeight - buttonHeight;
-    const newLeft = Math.max(0, Math.min(Math.random() * maxLeft, maxLeft));
-    const newTop = Math.max(0, Math.min(Math.random() * maxTop, maxTop));
+    const newLeft = Math.random() * (window.innerWidth - buttonWidth);
+    const newTop = Math.random() * (window.innerHeight - buttonHeight);
     const newPosition = {
-      left: `${newLeft}px`,
-      top: `${newTop}px`,
+      left: `${Math.max(newLeft, 0)}px`, // Ensure it's at least 0
+      top: `${Math.max(newTop, 0)}px`, // Ensure it's at least 0
     };
     setPosition(newPosition);
   };
+
+  const handleNoButtonHover = () => {
+    handleMouseMove();
+    if (!hoveredOnce) {
+      setHoveredOnce(true);
+    }
+  };
+
   return (
     <section className="flex flex-col justify-center items-center h-screen relative">
       <img
@@ -27,11 +32,12 @@ const Second = () => {
         alt="A big heart for you"
         className="absolute inset-0 z-0 bg-cover h-full w-full"
       />
-      <div className="z-10 w-1/4 mb-28 flex flex-col items-center">
+      <div className="z-10 mb-28">
         <p className="text-white font-bold text-4xl mb-16 font-montserrat">
-          Will you go on a date with me??
+          Will you go on a date
+          <br /> with me??
         </p>
-        <div className="w-full flex flex-row justify-between items-center relative">
+        <div className=" text-center">
           <button
             className="border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white"
             onClick={() =>
@@ -41,13 +47,14 @@ const Second = () => {
             Yes
           </button>
           <button
-            onClick={handleClick}
+            className={`border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium ${
+              hoveredOnce ? "text-red-600" : ""
+            } hover:border-white hover:shadow-sm hover:shadow-white`}
             style={{
-              color: clicked ? "black" : "white",
-              position: clicked ? "absolute" : "relative", // Adjust position
+              position: hoveredOnce ? "absolute" : "relative",
               ...position,
             }}
-            className={`border-red-600 border-2 rounded-xl w-24 h-10 font-medium hover:border-white hover:shadow-sm hover:shadow-white`}
+            onMouseMove={handleNoButtonHover}
           >
             No
           </button>
