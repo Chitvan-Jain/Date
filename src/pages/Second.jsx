@@ -46,8 +46,8 @@ const Second = () => {
             Yes
           </button>
           <button
-            className={`border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium ${
-              hoveredOnce ? "text-red-600" : ""
+            className={`border-red-600 border-2 rounded-xl w-24 h-10 font-medium ${
+              hoveredOnce ? "text-red-600" : "text-white"
             } hover:border-white hover:shadow-sm hover:shadow-white`}
             style={{
               position: hoveredOnce ? "absolute" : "relative",

@@ -14,6 +14,10 @@ const First = () => {
     }
   };
 
+  const whenClick = () => {
+    window.location.href = "/second-page";
+  };
+
   return (
     <section className="flex flex-col justify-center items-center h-screen relative">
       <img
@@ -28,7 +32,7 @@ const First = () => {
         <div className=" w-full flex flex-row justify-evenly">
           <button
             className=" border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white"
-            onlcick={handleClick}
+            onClick={whenClick}
           >
             yup
           </button>
