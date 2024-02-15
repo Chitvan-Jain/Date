@@ -1,2 +1,2 @@
-import BGimage from "./bgheart.svg";
+import BGimage from "./img.svg";
 export { BGimage };
