@@ -9,8 +9,6 @@ const First = () => {
     if (!clicked) {
       setClicked(true);
     } else {
-      // Redirect to the second page
-      // window.location.href = "/secondpage";
       <Link to="/secondpage" />;
     }
   };
