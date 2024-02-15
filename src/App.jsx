@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<First />} />
-        <Route path="/second-page" element={<Second />} />
+        <Route path="/secondpage" element={<Second />} />
       </Routes>
     </BrowserRouter>
   );

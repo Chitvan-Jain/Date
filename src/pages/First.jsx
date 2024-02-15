@@ -10,12 +10,12 @@ const First = () => {
       setClicked(true);
     } else {
       // Redirect to the second page
-      window.location.href = "/second-page";
+      window.location.href = "/secondpage";
     }
   };
 
   const whenClick = () => {
-    window.location.href = "/second-page";
+    window.location.href = "/secondpage";
   };
 
   return (
