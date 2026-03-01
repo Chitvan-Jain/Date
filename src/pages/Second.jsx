@@ -40,7 +40,7 @@ const Second = () => {
           <button
             className="border-red-600 border-2 rounded-xl w-24 h-10 text-white font-medium hover:border-white hover:shadow-sm hover:shadow-white"
             onClick={() =>
-              alert("Great! I'll make sure we have a wonderful time together.")
+              alert("GG")
             }
           >
             Yes
